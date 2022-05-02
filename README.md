@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# <日本犬クラブ>
 
-Things you may want to cover:
+## サイト概要
+### サイトテーマ
+<...>自分が飼っている日本犬の投稿ができたり、日本犬ごとに検索して他人の愛犬の投稿が見ることができる
 
-* Ruby version
+### テーマを選んだ理由
+<...>自分自身黒柴を飼っているのですが、インスタグラム等で時々写真を載せています。その中で様々な人の愛犬特に日本犬を専門で見れるサイトがあれば便利だなと思いこのテーマにしました。また近年日本犬は海外でも人気になっており、日本犬の良さを広めるためにも良いと考えました。
 
-* System dependencies
+### ターゲットユーザ
+<...>日本犬が好きな人、日本犬を飼っている人
 
-* Configuration
+### 主な利用シーン
+<...>自分の可愛い愛犬を投稿したり、他人の飼っている愛犬を見ることができる。
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
