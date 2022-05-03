@@ -24,5 +24,4 @@
 - IDE：Cloud9
 
 ## 使用素材
--shtter stock
--https://www.shutterstock.com/ja
+-shutter stock https://www.shutterstock.com/ja
