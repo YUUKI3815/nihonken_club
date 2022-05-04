@@ -14,7 +14,7 @@
   
    参考文献
  - 日本犬保存会:https://www.nihonken-hozonkai.or.jp/
- - 秋田犬や柴犬などの日本犬が絶滅の危機！？：https://www.tsukuniha.net/news/02006/  
+ - 秋田犬や柴犬などの日本犬が絶滅の危機！？:https://www.tsukuniha.net/news/02006/  
 
 
 ### ターゲットユーザー
