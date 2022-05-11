@@ -1,2 +1,64 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class= "container">
+  <div class= "row">
+    <div class= "col">
+      <h2>マイページ</h2>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "form-gloup col">
+      <%= image_tag @user.get_profile_image(63,63) %>
+      <table>
+        <tbody>
+          <tr>
+            <th>
+              氏名
+            </th>
+            <td>
+              <%= @user.last_name + "　" + @user.first_name %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              カナ
+            </th>
+          <td>
+            <%= @user.last_name_kana + "　" + @user.first_name_kana %>
+          </td>
+           </tr>
+           <tr>
+             <th>
+               ニックネーム
+             </th>
+             <td>
+               <%= @user.nickname %>
+             </td>
+           </tr>
+           <tr>
+             <th>
+             自己紹介
+             </th>
+           <td>
+             <%= @user.introduction %>
+           </td>
+           </tr>
+           <tr>
+             <th>
+               メールアドレス
+             </th>
+             <td>
+               <%= @user.email %>
+             </td>
+           </tr>
+           <tr>
+             <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-success" %>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "col">
+      <h2>ペット一覧</h2>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class= "container">
+  <div class= "row">
+    <div class= "col">
+      <h2>犬種一覧・追加</h2>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "col">
+      <%= form_with model: @dog_breed, url: admin_dog_breeds_path, method: :post, remote: true do |f| %>
+      <%= f.label :name, "犬種名" %>
+      <%= f.text_field :name, placeholder:"柴犬" %>
+      <%= f.submit "新規登録", class:"btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "col">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>犬種</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @dog_breeds.each do |dog_breed| %>
+            <tr>
+              <td><%= dog_breed.name %></td>
+              <td><%= link_to "編集する", edit_admin_dog_breed_path(dog_breed.id), class:"btn btn-success" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

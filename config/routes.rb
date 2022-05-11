@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   }
   # ユーザー用
   scope module: :public do
+    get '/users/my_page' => 'users#show'
     resources :users, only: [:edit, :update]
-    get '/users/my_page' => 'public/users#show'
     resources :pets, only: [:index, :create, :edit, :update, :destroy]
     resources :dog_images, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
      resources :comments, only: [:create, :destroy]
