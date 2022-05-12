@@ -1,0 +1,59 @@
+<div class= "container">
+  <div class= "row">
+    <div class= "col">
+      <h2>ペットの登録</h2>
+    </div>
+  </div>
+        <%= form_with model: @pet, local: true do |f| %>
+        <div class="field form-group row">
+        <%= f.label :犬種, class: "col-3" %>
+        <%= f.select :dog_breeds_id, options_from_collection_for_select(DogBreed.all, :id, :name), { prompt: '選択してください' } %>
+        </div>
+        <div class="field form-group row">
+        <%= f.label :ワンちゃんの名前, class: "col-3" %>
+        <%= f.text_field :name, placeholder: "ポチ" %>
+        </div>
+        <div class="field form-group row">
+        <%= f.label :ワンちゃんの紹介文, class: "col-3" %>
+        <%= f.text_area :introduction, placeholder: "かわいい" %>
+        </div>
+        <div class="field form-group row">
+        <%= f.label :年齢, class: "col-3" %>
+        <%= f.select :age, options_for_select((0..25).to_a), { include_blank: '選択'} %>
+        </div>
+        <div class="field form-group row">
+        <%= f.label :性別, class: "col-3" %>
+        <%= f.label :gender, '男の子', value: 2 %>
+        <%= f.radio_button :gender, '2' %>
+        <%= f.label :gender, '女の子', value: 1%>
+        <%= f.radio_button :gender, '1' %>
+        <%= f.label :gender, '性別不明', value: 0 %>
+        <%= f.radio_button :gender, '0' %>
+        </div>
+        <div class= "form-group row">
+        <%= f.label :profile_image, 'プロフィール画像', class: "col-3" %>
+        <%= f.file_field :profile_image %>
+        </div>
+        <div class= "form-group row">
+        <%= f.submit "ペットの登録",class:"btn btn-secondary" %>
+        </div>
+      <% end %>
+      <!-- 登録したペットをカードで表示 -->
+      <div class= "row">
+        <h2>ペット一覧</h2>
+        <% @pets.each do |pet| %>
+        <div class="card">
+        <img class="card-img-top"<%= image_tag pet.get_profile_image(63,63) %>>
+        <div class="card-body">
+        <h4 class="card-title"><%= pet.name %></h4>
+        <p class="card-text">
+        <%= pet.dog_breeds_id %>
+        <%= pet.introduction %>
+        <%= pet.age %>
+        <%= pet.gender %>
+        </p>
+        </div>
+        </div>
+        <% end %>
+        </div>
+</div>
