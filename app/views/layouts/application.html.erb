@@ -8,8 +8,68 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header class= "bg-info">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <a class="navbar-brand">日本犬クラブ</a>
+        <div class="text-center font-weight-bold">
+        <% if user_signed_in? %>
+          ようこそ、<%= current_user.nickname %>さん！
+        <% end %>
+      </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to about_path, class: 'nav-link border rounded mr-2' do %>
+        日本犬とは？
+        <% end %>
+      </li>
+      <li>
+        <%= link_to users_my_page_path, class: 'nav-link border rounded mr-2' do %>
+        マイページ
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_dog_image_path, class: 'nav-link border rounded mr-2' do %>
+        新規投稿
+        <% end %>
+      </li>
+      <li>
+        <%= link_to dog_images_path, class: 'nav-link border rounded mr-2' do %>
+        みんなの投稿
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, class: 'nav-link border rounded mr-2' do %>
+        ログアウト
+        <% end %>
+      </li>
+      
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    </header>
     <%= yield %>
+    <footer class="fixed-bottom border-top p-3 mb-2 ">
+  <div class='container mt-2'>
+  	<div class='row'>
+    	<div class='mx-auto'>
+    		<p>
+    		  <span style="font-size : 15pt">
+    		   日本犬クラブ
+    		  </span>
+    		</p>
+    	</div>
+    </div>
+  </div>
   </body>
 </html>
